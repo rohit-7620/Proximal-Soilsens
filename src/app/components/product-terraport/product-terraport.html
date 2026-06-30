@@ -1,0 +1,207 @@
+<div class="product-page">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Grid overlay — same as homepage -->
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-container">
+      <div class="breadcrumb animate-fade-in">
+        <a routerLink="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-sep">Products</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">SoilSens<sup>®</sup> TerraPort<sup>™</sup></span>
+      </div>
+
+      <div class="hero-badge">
+        <span class="badge-tag">📱 Portable</span>
+        <span class="badge-tag">🔌 Plug &amp; Play</span>
+        <span class="badge-tag">⚡ Patent Pending</span>
+        <span class="badge-tag">☁️ Cloud Enabled</span>
+      </div>
+
+      <h1 class="hero-title">SOILSENS<sup>®</sup> TERRAPORT<sup>™</sup></h1>
+      <p class="hero-tagline">Portable Moisture Meter with Additional Plug &amp; Play Sensors</p>
+
+      <p class="hero-description">
+        Field-level moisture variation is a critical challenge in agriculture that stationary point
+        sensors cannot effectively address. Traditional fixed systems measure moisture at a single
+        spot and laterally max 20–50&nbsp;cm, offering a limited view of what's really happening
+        across the farm.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-num">360°</span>
+          <span class="stat-label">Field Coverage</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">Multi</span>
+          <span class="stat-label">Depth Profiling</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Shared Device</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="problem-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          The Challenge
+        </div>
+        <h2 class="section-title">
+          The Problem with<br>
+          <span class="gradient-text">Fixed Sensors</span>
+        </h2>
+        <p class="section-sub">
+          Stationary point sensors give a narrow, incomplete picture of soil moisture. Here's what
+          traditional approaches miss:
+        </p>
+      </div>
+      <div class="challenges-grid">
+        @for (challenge of challenges; track challenge) {
+          <div class="challenge-item">
+            <svg class="challenge-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+            </svg>
+            <p>{{ challenge }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Visual Section -->
+  <section class="solution-section">
+    <div class="container">
+      <div class="solution-grid">
+
+        <!-- Device Image -->
+        <div class="device-visual animate-slide-up">
+          <div class="solution-device-img">
+            <img src="Products/terra port.jpg" alt="SoilSens TerraPort Device" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Solution text -->
+        <div class="solution-content">
+          <div class="section-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+            Our Solution
+          </div>
+          <h2 class="section-title" style="text-align:left; font-size: clamp(1.75rem,4vw,2.5rem)">
+            The TerraPort™ Solution
+          </h2>
+          <p class="solution-text">
+            We developed TerraPort<sup>™</sup> — a <strong>patent-pending</strong>, compact, and portable
+            soil moisture meter that allows farmers to measure soil moisture at
+            <strong>multiple depths and multiple locations</strong> across the field.
+          </p>
+          <p class="solution-text">
+            This enables the creation of a <strong>comprehensive moisture profile</strong>, helping farmers
+            make accurate, data-driven irrigation decisions.
+          </p>
+          <p class="solution-text">
+            Cost-effective, easy to use, and <strong>shareable</strong> — TerraPort<sup>™</sup> can be used
+            across multiple plots or by multiple farmers within a community.
+          </p>
+
+          <div class="solution-highlight">
+            <div class="highlight-icon">💡</div>
+            <p class="highlight-text">
+              <strong>One device. Field-wide insights.</strong><br>
+              Smarter irrigation starts here.
+            </p>
+          </div>
+
+          <!-- Specs grid -->
+          <div class="specs-grid">
+            @for (spec of specs; track spec.label) {
+              <div class="spec-item">
+                <span class="spec-label">{{ spec.label }}</span>
+                <span class="spec-value">{{ spec.value }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Section -->
+  <section class="capabilities-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Capabilities
+        </div>
+        <h2 class="section-title">
+          What TerraPort™<br>
+          <span class="gradient-text">Can Do</span>
+        </h2>
+        <p class="section-sub">
+          Beyond measuring moisture — TerraPort<sup>™</sup> is a complete field intelligence tool.
+        </p>
+      </div>
+      <div class="capabilities-grid">
+        @for (cap of capabilities; track cap.title) {
+          <div class="capability-card">
+            <div class="cap-icon">{{ cap.icon }}</div>
+            <h3 class="cap-title">{{ cap.title }}</h3>
+            <p class="cap-desc">{{ cap.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Why TerraPort
+        </div>
+        <h2 class="section-title">
+          Benefits for<br>
+          <span class="gradient-text">Every Farmer</span>
+        </h2>
+        <p class="section-sub">
+          By delivering precise insights into crop water needs, TerraPort<sup>™</sup> helps farmers
+          farm smarter and more sustainably.
+        </p>
+      </div>
+      <div class="benefits-grid">
+        @for (benefit of benefits; track benefit.title) {
+          <div class="benefit-card">
+            <div class="benefit-icon">{{ benefit.icon }}</div>
+            <h3 class="benefit-title">{{ benefit.title }}</h3>
+            <p class="benefit-desc">{{ benefit.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Map Your Field's Moisture?</h2>
+      <p class="cta-description">
+        Experience field-wide precision irrigation with TerraPort<sup>™</sup> — one device, infinite insights.
+      </p>
+      <a routerLink="/request-demo" class="cta-button">Request a Demo</a>
+    </div>
+  </section>
+
+</div>

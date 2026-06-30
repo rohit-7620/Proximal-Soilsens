@@ -1,0 +1,204 @@
+<div class="product-page">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-container">
+      <div class="hero-inner">
+
+        <!-- Left: Text -->
+        <div class="hero-text animate-slide-up">
+          <div class="breadcrumb">
+            <a routerLink="/" class="breadcrumb-link">Home</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-sep">Products</span>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">SoilSens<sup>®</sup> Weather Station</span>
+          </div>
+
+          <div class="hero-badge">
+            <span class="badge-tag">💨 Wind</span>
+            <span class="badge-tag">🌧️ Rainfall</span>
+            <span class="badge-tag">☀️ Solar Radiation</span>
+            <span class="badge-tag">📊 Real-Time</span>
+          </div>
+
+          <h1 class="hero-title">
+            SOILSENS<sup>®</sup><br>
+            <span class="gradient-text">WEATHER STATION</span>
+          </h1>
+          <p class="hero-tagline">Complete Hyperlocal Field Weather Monitoring System</p>
+
+          <p class="hero-description">
+            SoilSens<sup>®</sup> Weather Station captures real-time weather data to empower farmers
+            with accurate, field-level information. Both live data and predicted forecasts are available
+            on a dashboard and the farmer's mobile — enabling smarter decisions on sowing, irrigation,
+            spraying, and harvesting.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-pill">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Parameters</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">24/7</span>
+              <span class="stat-label">Real-Time</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">Mobile</span>
+              <span class="stat-label">Ready</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a routerLink="/request-demo" class="btn-primary">Request a Demo</a>
+            <a routerLink="/contact" class="btn-secondary">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Right: Product Image -->
+        <div class="hero-image animate-slide-up" style="animation-delay:0.2s">
+          <div class="product-image-frame">
+            <img src="img/weather_station.jpg" alt="SoilSens Weather Station" loading="eager">
+            <!-- Floating data badges -->
+            <div class="img-badge img-badge-wind">💨 Wind: 12 km/h</div>
+            <div class="img-badge img-badge-rain">🌧️ Rain: 3.2 mm</div>
+            <div class="img-badge img-badge-temp">🌡️ Temp: 28°C</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Parameters Section -->
+  <section class="params-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          What It Measures
+        </div>
+        <h2 class="section-title">
+          5 Critical Weather<br>
+          <span class="gradient-text">Parameters</span>
+        </h2>
+        <p class="section-sub">
+          Five essential measurements captured continuously for complete field-level weather intelligence.
+        </p>
+      </div>
+
+      <div class="params-grid">
+        @for (param of parameters; track param.name) {
+          <div class="param-card">
+            <div class="param-icon-wrap">{{ param.icon }}</div>
+            <h3 class="param-name">{{ param.name }}</h3>
+            <p class="param-desc">{{ param.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Platform Features
+        </div>
+        <h2 class="section-title">
+          Built for Every Farm,<br>
+          <span class="gradient-text">Every Decision</span>
+        </h2>
+        <p class="section-sub">
+          Six powerful platform capabilities that turn raw weather data into clear, actionable advisories.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <div class="feature-card">
+            <div class="feature-icon-wrap">{{ feature.icon }}</div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-desc">{{ feature.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- How Farmers Use This — Impact Section -->
+  <section class="impact-section">
+    <div class="container">
+      <div class="impact-inner">
+
+        <!-- Left: Heading + description -->
+        <div class="impact-left animate-slide-up">
+          <div class="section-eyebrow" style="margin-bottom:1.25rem">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+            Real–World Impact
+          </div>
+          <h2 class="section-title" style="text-align:left; font-size:clamp(1.75rem,4vw,2.5rem)">
+            How Farmers<br>
+            <span class="gradient-text">Use This Data</span>
+          </h2>
+          <p class="impact-lead">
+            Hyperlocal weather data transforms guesswork into precision. Every field operation
+            becomes data-driven — from planting to harvest.
+          </p>
+          <div class="impact-highlight">
+            <div class="highlight-icon">🌾</div>
+            <p>Farm with total confidence — before every operation, every single day.</p>
+          </div>
+        </div>
+
+        <!-- Right: Use-case chips -->
+        <div class="impact-right">
+          <div class="impact-grid">
+            <div class="impact-item">
+              <div class="impact-item-icon">🌱</div>
+              <span>Plan sowing dates based on rain forecasts</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-item-icon">💧</div>
+              <span>Skip irrigation when rain is predicted</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-item-icon">🧪</div>
+              <span>Schedule sprays during optimal wind conditions</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-item-icon">🌡️</div>
+              <span>Identify heat or frost stress periods in advance</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-item-icon">🌾</div>
+              <span>Time harvesting to avoid rainfall damage</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-item-icon">🦠</div>
+              <span>Predict disease outbreaks using humidity trend data</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Deploy a Weather Station on Your Farm</h2>
+      <p class="cta-desc">
+        Get hyperlocal weather data that makes every farm decision smarter and more confident.
+      </p>
+      <a routerLink="/request-demo" class="cta-button">Request a Demo</a>
+    </div>
+  </section>
+
+</div>

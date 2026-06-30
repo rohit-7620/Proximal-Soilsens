@@ -1,0 +1,10 @@
+// 📋 EXAMPLE FILE — safe to commit.
+// To set up the project locally:
+//   1. Copy this file:  cp environment.prod.ts.example environment.prod.ts
+//   2. Replace the placeholder URL with your real Google Apps Script URL
+//   3. Never commit environment.prod.ts — it's in .gitignore
+
+export const environment = {
+  production: true,
+  googleSheetUrl: 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'
+};

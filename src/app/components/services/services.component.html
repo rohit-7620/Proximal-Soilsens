@@ -1,0 +1,107 @@
+<!-- ── Salient Features ── -->
+<section id="solutions" class="section-padding features-bg">
+  <div class="container-custom">
+
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+        Why SoilSens
+      </div>
+      <h2 class="section-title">
+        Built for Every Farm,<br>
+        <span class="gradient-text">Every Crop, Every Soil</span>
+      </h2>
+      <p class="section-sub">
+        Six core principles that make SoilSens the most trusted precision agriculture platform across India and beyond.
+      </p>
+    </div>
+
+    <div class="feat-grid">
+
+      <div class="feat-card animate-slide-up">
+        <div class="feat-icon-wrap">🌐</div>
+        <h3 class="feat-title">Universal</h3>
+        <p class="feat-desc">Works across all 72+ crops and all soil types — no configuration needed for different regions.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon-wrap">⚙️</div>
+        <h3 class="feat-title">Customizable</h3>
+        <p class="feat-desc">Tailored to each client's specific interests, crop profiles, and operational requirements.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon-wrap">🇮🇳</div>
+        <h3 class="feat-title">Made in India</h3>
+        <p class="feat-desc">Indigenously developed at IIT Bombay — first company in India to build sensors for precision agriculture.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon-wrap">🔧</div>
+        <h3 class="feat-title">Modular Design</h3>
+        <p class="feat-desc">Simple field servicing and upgrades with a modular architecture built for real-world conditions.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon-wrap">🧪</div>
+        <h3 class="feat-title">Patented Technology</h3>
+        <p class="feat-desc">Innovative lab-on-a-farm solutions using state-of-the-art electrochemical sensing technology.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon-wrap">💰</div>
+        <h3 class="feat-title">Affordable & Durable</h3>
+        <p class="feat-desc">Premium quality at accessible prices, engineered to withstand real field conditions year-round.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Products ── -->
+<section id="products" class="section-padding products-bg">
+  <div class="container-custom">
+
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+        Product Ecosystem
+      </div>
+      <h2 class="section-title">
+        A Complete 360°<br>
+        <span class="gradient-text">Agri-Tech Ecosystem</span>
+      </h2>
+      <p class="section-sub">
+        From portable field devices to cloud-powered analytics — every tool you need for precision agriculture at scale.
+      </p>
+    </div>
+
+    <div class="prod-items-container">
+      @for (service of services(); track service.id; let i = $index) {
+        <div class="prod-item animate-fade-in" [class.reverse]="i % 2 === 1">
+          <div class="prod-image-wrapper">
+            <div class="prod-image-container">
+              <img [src]="getServiceImage(service.id)" [alt]="service.title" class="prod-image" loading="lazy">
+            </div>
+          </div>
+          <div class="prod-content">
+            <div class="prod-number-large">{{ (i + 1).toString().padStart(2, '0') }}</div>
+            <h3 class="prod-title">{{ service.title }}</h3>
+            <p class="prod-desc">{{ service.description }}</p>
+            <ul class="prod-features">
+              @for (f of service.features; track $index) {
+                <li class="prod-feature">
+                  <svg class="feat-check" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  {{ f }}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

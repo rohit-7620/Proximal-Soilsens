@@ -1,0 +1,174 @@
+<div class="product-page">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-container">
+      <div class="hero-inner">
+
+        <!-- Left: Text Content -->
+        <div class="hero-text animate-slide-up">
+          <div class="breadcrumb">
+            <a routerLink="/" class="breadcrumb-link">Home</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-sep">Products</span>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">SoilSens<sup>®</sup> SM-Sensor</span>
+          </div>
+
+          <div class="hero-badge">
+            <span class="badge-tag">📡 Frequency Output</span>
+            <span class="badge-tag">🔧 IoT Ready</span>
+            <span class="badge-tag">⚡ State-of-the-Art</span>
+          </div>
+
+          <h1 class="hero-title">SOILSENS<sup>®</sup><br>SM-SENSOR</h1>
+          <p class="hero-tagline">State-of-the-Art Soil Moisture Sensor for Custom IoT Integration</p>
+
+          <p class="hero-description">
+            A state-of-the-art soil moisture sensor designed for seamless integration with custom IoT hardware.
+            Gives <strong>frequency output</strong> that changes with soil moisture value — enabling
+            precise, reliable, and noise-resistant readings across
+            <strong>any crop</strong>, <strong>any depth</strong>, and <strong>any field</strong>.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-pill">
+              <span class="stat-num">Any</span>
+              <span class="stat-label">Crop Type</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">Any</span>
+              <span class="stat-label">Depth</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">Any</span>
+              <span class="stat-label">Field</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a routerLink="/request-demo" class="btn-primary">Request a Demo</a>
+            <a routerLink="/contact" class="btn-secondary">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Right: Product Image -->
+        <div class="hero-image animate-slide-up" style="animation-delay:0.2s">
+          <div class="product-image-frame">
+            <img src="img/sensor.jpg" alt="SoilSens SM-Sensor" loading="eager">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Why SM-Sensor
+        </div>
+        <h2 class="section-title">
+          Built for Precision,<br>
+          <span class="gradient-text">Designed for Integration</span>
+        </h2>
+        <p class="section-sub">
+          Six core capabilities that make the SM-Sensor the most versatile soil moisture sensor for IoT developers and precision agriculture.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <div class="feature-card">
+            <div class="feature-icon-wrap">{{ feature.icon }}</div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-desc">{{ feature.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs Section -->
+  <section class="specs-section">
+    <div class="container">
+      <div class="specs-inner">
+        <!-- Left: Heading -->
+        <div class="specs-left animate-slide-up">
+          <div class="section-eyebrow" style="margin-bottom:1.25rem">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+            Technical Details
+          </div>
+          <h2 class="section-title" style="text-align:left; font-size:clamp(1.75rem,4vw,2.5rem)">
+            Technical<br>
+            <span class="gradient-text">Specifications</span>
+          </h2>
+          <p class="specs-lead">
+            Precision-engineered components and frequency-based output make the SM-Sensor the
+            ideal choice for developers building the next generation of smart agriculture systems.
+          </p>
+          <div class="specs-highlight-box">
+            <div class="highlight-icon">⚡</div>
+            <p>Frequency-based output means zero drift over time and immunity to electrical noise.</p>
+          </div>
+        </div>
+
+        <!-- Right: Specs Cards -->
+        <div class="specs-cards">
+          @for (spec of specs; track spec.label) {
+            <div class="spec-card">
+              <span class="spec-label">{{ spec.label }}</span>
+              <span class="spec-value">{{ spec.value }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section class="usecases-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Applications
+        </div>
+        <h2 class="section-title">
+          Where SM-Sensor<br>
+          <span class="gradient-text">Makes the Difference</span>
+        </h2>
+        <p class="section-sub">
+          From research labs to automated irrigation systems — SM-Sensor powers precision decisions wherever soil moisture matters.
+        </p>
+      </div>
+
+      <div class="usecases-grid">
+        @for (uc of useCases; track uc.title) {
+          <div class="usecase-card">
+            <div class="usecase-icon-wrap">{{ uc.icon }}</div>
+            <h3 class="usecase-title">{{ uc.title }}</h3>
+            <p class="usecase-desc">{{ uc.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Integrate SM-Sensor into Your IoT System</h2>
+      <p class="cta-desc">
+        Contact us for technical specifications, integration support, and bulk pricing.
+      </p>
+      <a routerLink="/request-demo" class="cta-button">Request a Demo</a>
+    </div>
+  </section>
+
+</div>

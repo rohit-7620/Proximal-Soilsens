@@ -1,0 +1,78 @@
+<div class="product-page">
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="breadcrumb">
+        <a routerLink="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-sep">Products</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Future Products</span>
+      </div>
+
+      <div class="hero-badge">
+        <span class="badge-tag">🔭 In Development</span>
+        <span class="badge-tag">🚀 Coming Soon</span>
+        <span class="badge-tag">🌱 Deep-Tech</span>
+      </div>
+
+      <h1 class="hero-title">FUTURE PRODUCTS</h1>
+      <p class="hero-tagline">The Next Wave of SoilSens<sup>®</sup> Innovation</p>
+      <p class="hero-description">
+        At SoilSens<sup>®</sup>, we are continuously pushing the boundaries of precision agriculture.
+        Here is a glimpse into what is in our product pipeline — designed to give farmers and
+        agronomists even more powerful tools to monitor, analyze, and optimize their fields.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pipeline -->
+  <section class="pipeline-section">
+    <div class="container">
+      <h2 class="section-title">In the Pipeline</h2>
+      <p class="section-subtitle">Products under active research and development at SoilSens<sup>®</sup>.</p>
+      <div class="pipeline-grid">
+        @for (product of pipeline; track product.name; let i = $index) {
+          <div class="pipeline-card">
+            <div class="card-number">0{{ i + 1 }}</div>
+            <div class="card-icon">{{ product.icon }}</div>
+            <h3 class="card-name">{{ product.name }}</h3>
+            <p class="card-desc">{{ product.description }}</p>
+            <div class="card-tags">
+              @for (tag of product.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+            <div class="coming-soon-badge">Coming Soon</div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="vision-section">
+    <div class="container">
+      <div class="vision-card">
+        <div class="vision-icon">🔭</div>
+        <h2 class="vision-title">Our Innovation Mission</h2>
+        <p class="vision-text">
+          To lead in deep-tech green solutions for greater agricultural productivity and precision —
+          developing advanced AI/ML technologies and expanding our product portfolio to empower
+          farmers globally for sustainable and precision agriculture.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Interested in Early Access?</h2>
+      <p class="cta-desc">Register your interest and be among the first to trial our upcoming products.</p>
+      <a routerLink="/request-demo" class="cta-button" (click)="scrollToTopOnNavigate($event, '/request-demo')">Register Interest</a>
+    </div>
+  </section>
+
+</div>

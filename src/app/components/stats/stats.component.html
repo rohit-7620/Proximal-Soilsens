@@ -1,0 +1,67 @@
+<section #statsSection id="success" class="stats-section">
+
+  <!-- Background layers -->
+  <div class="stats-bg" aria-hidden="true">
+    <div class="stats-gradient"></div>
+    <div class="stats-grid-lines"></div>
+    <div class="stats-noise"></div>
+  </div>
+
+  <div class="container-custom">
+
+    <!-- Header -->
+    <div class="stats-header">
+      <div class="stats-eyebrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+        Real Impact
+      </div>
+      <h2 class="stats-title">
+        Measurable Results Across<br>
+        <span style="background:linear-gradient(135deg,#4ade80,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Planet, People &amp; Profit</span>
+      </h2>
+      <p class="stats-sub">
+        Numbers that tell the story of transformation — from soil to harvest, from farm to market.
+      </p>
+    </div>
+
+    <!-- Animated counters -->
+    <div class="stats-grid">
+      @for (stat of stats(); track stat.id) {
+        <div class="stat-item reveal-init">
+          <div class="stat-gauge">
+            <svg class="gauge-svg" viewBox="0 0 100 100">
+              <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
+              <circle class="gauge-fill" cx="50" cy="50" r="45" 
+                [style.stroke-dashoffset]="283 - (283 * (stat.gaugeValue || 100) / 100)"></circle>
+            </svg>
+          </div>
+          <div class="stat-value">
+            {{ stat.prefix || '' }}{{ (animatedValues()[stat.id] || 0) | number }}{{ stat.suffix || '' }}
+          </div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      }
+
+    </div>
+
+    <!-- 3P Pillars -->
+    <div class="pillars-grid">
+      <div class="pillar">
+        <span class="pillar-icon">🌍</span>
+        <h3 class="pillar-title">Planet</h3>
+        <p class="pillar-desc">Reduced chemical inputs by 40% · Saved 27% water · 15,000+ hectares impacted · 72 crops across 8 countries</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">👥</span>
+        <h3 class="pillar-title">People</h3>
+        <p class="pillar-desc">Reached 25,000 farmers · Empowered 2,000 women farmers with data-driven tools and actionable insights</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">💰</span>
+        <h3 class="pillar-title">Profit</h3>
+        <p class="pillar-desc">22% increase in productivity · Reduced input costs · Optimized resource usage for higher farm profitability</p>
+      </div>
+    </div>
+
+  </div>
+</section>

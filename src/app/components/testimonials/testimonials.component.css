@@ -1,0 +1,228 @@
+/* ══════════════════════════════════
+   TESTIMONIALS — Premium
+   ══════════════════════════════════ */
+
+.testimonials-bg { background: #f8fafc; }
+.dark .testimonials-bg { background: #0a0f1e; }
+
+#partners.section-padding { padding-bottom: 2rem; }
+
+
+/* ── Section header ── */
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-title {
+  font-family: 'Syne', 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.dark .section-title { color: #f8fafc; }
+.section-sub {
+  font-size: 1.05rem;
+  color: #64748b;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Slider ── */
+.t-slider {
+  overflow: hidden;
+  border-radius: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.t-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+}
+.t-slide { min-width: 100%; padding: 0 0.5rem; }
+
+.t-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.75rem;
+  padding: 2.75rem;
+  max-width: 760px;
+  margin: 0 auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,.05);
+  position: relative;
+  overflow: hidden;
+}
+.t-card::before {
+  content: '"';
+  position: absolute;
+  top: 1.5rem; right: 2rem;
+  font-size: 8rem;
+  font-family: Georgia, serif;
+  color: rgba(34,197,94,.08);
+  line-height: 1;
+  pointer-events: none;
+}
+.dark .t-card {
+  background: #0f172a;
+  border-color: #1e293b;
+  box-shadow: 0 4px 24px rgba(0,0,0,.2);
+}
+
+/* Stars */
+.t-stars { display: flex; gap: 0.2rem; margin-bottom: 1.5rem; }
+.t-star { 
+  width: 1.1rem; height: 1.1rem; color: #f59e0b; 
+  transform: scale(0);
+  animation: starReveal 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.t-star:nth-child(1) { animation-delay: 0.1s; }
+.t-star:nth-child(2) { animation-delay: 0.18s; }
+.t-star:nth-child(3) { animation-delay: 0.26s; }
+.t-star:nth-child(4) { animation-delay: 0.34s; }
+.t-star:nth-child(5) { animation-delay: 0.42s; }
+
+@keyframes starReveal {
+  to { transform: scale(1); }
+}
+
+
+/* Quote */
+.t-quote {
+  font-size: 1.05rem;
+  color: #334155;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-style: italic;
+  position: relative; z-index: 1;
+}
+.dark .t-quote { color: #cbd5e1; }
+
+/* Author */
+.t-author { display: flex; flex-direction: column; gap: 0.25rem; }
+.t-name { font-weight: 700; color: #0f172a; font-size: 0.95rem; }
+.dark .t-name { color: #f1f5f9; }
+.t-role { font-size: 0.8rem; color: #22c55e; font-weight: 600; margin-top: 0.1rem; }
+.t-company { font-size: 0.75rem; color: #94a3b8; margin-top: 0.1rem; }
+
+/* Controls */
+.t-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+.t-btn {
+  width: 2.75rem; height: 2.75rem;
+  border-radius: 50%;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.t-btn:hover {
+  border-color: #22c55e;
+  background: #22c55e;
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(34,197,94,.3);
+}
+.dark .t-btn { background: #0f172a; border-color: #1e293b; color: #d1d5db; }
+.dark .t-btn:hover { border-color: #22c55e; background: #22c55e; color: #fff; }
+
+.t-dots { display: flex; gap: 0.5rem; align-items: center; }
+.t-dot {
+  width: 0.5rem; height: 0.5rem;
+  border-radius: 99px;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+.t-dot.active { background: #22c55e; width: 1.5rem; }
+.dark .t-dot { background: #334155; }
+.dark .t-dot.active { background: #22c55e; }
+
+/* ── Logos ── */
+.logos-section { margin-bottom: 3rem; }
+.logos-title {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 2.5rem;
+}
+/* ── Marquee Animation for Clients ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  padding: 2rem 0;
+}
+.dark .marquee-container { background: transparent; border: none; }
+
+.marquee-track {
+  display: flex;
+  animation: marquee 35s linear infinite;
+  gap: 3rem;
+  padding: 0 1rem;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+
+.marquee-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: default;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+.dark .marquee-item { background: #0f172a; border-color: #1e293b; }
+
+.marquee-item:hover {
+  transform: translateY(-4px);
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  border-color: rgba(34,197,94,.2);
+}
+.dark .marquee-item:hover { background: #1e293b; border-color: rgba(34,197,94,.3); }
+
+.client-logo {
+  max-height: 80px;
+  max-width: 180px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ── Incubation & Funding Support ── */
+.incubation-section { margin-top: 5rem; }
+
+.incubator-logo {
+  max-height: 80px;
+  max-width: 180px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}

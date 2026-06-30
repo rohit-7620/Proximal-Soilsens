@@ -1,0 +1,122 @@
+<div class="solutions-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Layered background + Effects -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-glow-3"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-content animate-fade-in">
+        <div class="hero-badge animate-fade-in">
+          <span class="badge-dot pulse-animation"></span>
+          <span>For Progressive Farmers</span>
+        </div>
+        
+        <h1 class="hero-title">
+          <span class="word-reveal gradient-text" style="animation-delay: 0.4s">Smart</span>
+          <span class="word-reveal" style="animation-delay: 0.5s">Farming for</span><br>
+          <span class="word-reveal gradient-text" style="animation-delay: 0.6s">Higher Yields</span>
+        </h1>
+        
+        <p class="hero-tagline animate-slide-up" style="animation-delay:.1s">
+          For farmers cultivating cash crops and managing landholdings above 5 acres, 
+          SoilSens offers an integrated, end-to-end smart farming ecosystem designed to 
+          drive productivity, profitability, and sustainability.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-ctas animate-slide-up" style="animation-delay:.2s">
+          <a routerLink="/request-demo" class="btn-primary">
+            Request a Demo
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+          <a href="#features" class="btn-secondary">
+            Explore Features
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="features-container">
+      @for (feature of features; track feature.title) {
+        <div class="feature-card">
+          <div class="feature-icon">{{ feature.icon }}</div>
+          <h2 class="feature-title">{{ feature.title }}</h2>
+          <p class="feature-description">{{ feature.description }}</p>
+          
+          @if (feature.benefits) {
+            <ul class="feature-benefits">
+              @for (benefit of feature.benefits; track benefit) {
+                <li class="benefit-item">
+                  <svg class="benefit-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  {{ benefit }}
+                </li>
+              }
+            </ul>
+          }
+
+          @if (feature.subFeatures && feature.subFeatures.length > 0) {
+            <div class="sub-features">
+              @for (subFeature of feature.subFeatures; track subFeature.title) {
+                <div class="sub-feature">
+                  <h3 class="sub-feature-title">{{ subFeature.title }}</h3>
+                  <p class="sub-feature-description">{{ subFeature.description }}</p>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="why-choose-section">
+    <div class="why-choose-container">
+      <h2 class="section-title">Why Choose SoilSens' 360° Ecosystem?</h2>
+      
+      <div class="benefits-grid">
+        @for (benefit of benefits; track benefit.title) {
+          <div class="benefit-card">
+            <div class="benefit-icon-large">{{ benefit.icon }}</div>
+            <h3 class="benefit-title">{{ benefit.title }}</h3>
+            <p class="benefit-description">{{ benefit.description }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="ecosystem-message">
+        <p>
+          SoilSens is not just a technology provider — we are your partner in growth. 
+          Whether you're growing grapes, pomegranates, cotton, sugarcane, or vegetables, 
+          our solution is tailored to help you achieve better returns per acre.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Transform Your Farm?</h2>
+      <p class="cta-description">
+        Get started with SoilSens' 360° Smart Farming Package today
+      </p>
+      <a (click)="navigateToDemo()" class="cta-button" style="cursor: pointer;">Request a Demo</a>
+    </div>
+  </section>
+</div>

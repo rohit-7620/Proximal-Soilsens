@@ -1,0 +1,134 @@
+<main class="demo-page">
+  <div class="demo-bg" aria-hidden="true">
+    <div class="demo-glow"></div>
+  </div>
+
+  <div class="container-custom">
+    <div class="demo-content">
+      <div class="demo-header animate-slide-up">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Experience the Future
+        </div>
+        <h1 class="demo-title">Request a <span class="gradient-text">Live Demo</span></h1>
+        <p class="demo-sub">
+          Fill out the form below and our specialists will reach out to schedule a personalized walkthrough of SoilSens technology.
+        </p>
+      </div>
+
+      <div class="demo-card-container animate-fade-in" style="animation-delay: 0.2s">
+        <div class="demo-card">
+          <form (ngSubmit)="onSubmit()" #f="ngForm" class="demo-form">
+            <div class="form-grid">
+              <!-- Name -->
+              <div class="form-group">
+                <label for="name" class="form-label">Name *</label>
+                <input type="text" id="name" name="name" [(ngModel)]="formData().name" 
+                  required class="form-input" placeholder="Enter your full name">
+                @if (f.submitted && !formData().name) {
+                  <span class="form-error">Name is required.</span>
+                }
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email" class="form-label">Email *</label>
+                <input type="email" id="email" name="email" [(ngModel)]="formData().email" 
+                  required email class="form-input" placeholder="you@example.com">
+                @if (f.submitted && (f.controls['email']?.errors?.['required'] || f.controls['email']?.errors?.['email'])) {
+                  <span class="form-error">Valid email is required.</span>
+                }
+              </div>
+
+              <!-- Role -->
+              <div class="form-group">
+                <label for="role" class="form-label">Role *</label>
+                <input type="text" id="role" name="role" [(ngModel)]="formData().role" 
+                  required class="form-input" placeholder="e.g. Farmer, Agronomist, Manager">
+                @if (f.submitted && !formData().role) {
+                  <span class="form-error">Role is required.</span>
+                }
+              </div>
+
+              <!-- Company -->
+              <div class="form-group">
+                <label for="company" class="form-label">Company / Organization *</label>
+                <input type="text" id="company" name="company" [(ngModel)]="formData().company" 
+                  required class="form-input" placeholder="Your organization name">
+                @if (f.submitted && !formData().company) {
+                  <span class="form-error">Company is required.</span>
+                }
+              </div>
+
+              <!-- Crop Type -->
+              <div class="form-group">
+                <label for="cropType" class="form-label">Crop Type *</label>
+                <input type="text" id="cropType" name="cropType" [(ngModel)]="formData().cropType" 
+                  required class="form-input" placeholder="e.g. Wheat, Rice, Vegetables">
+                @if (f.submitted && !formData().cropType) {
+                  <span class="form-error">Crop Type is required.</span>
+                }
+              </div>
+
+              <!-- Mobile -->
+              <div class="form-group">
+                <label for="mobile" class="form-label">Mobile / Contact Number *</label>
+                <input type="tel" id="mobile" name="mobile" [(ngModel)]="formData().mobile" 
+                  required class="form-input" placeholder="+91 1234567890">
+                @if (f.submitted && !formData().mobile) {
+                  <span class="form-error">Contact number is required.</span>
+                }
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group" style="margin-top: 1.5rem">
+              <label for="message" class="form-label">Message *</label>
+              <textarea id="message" name="message" [(ngModel)]="formData().message" 
+                required rows="4" class="form-input" style="resize:none"
+                placeholder="Tell us about your requirements..."></textarea>
+              @if (f.submitted && !formData().message) {
+                <span class="form-error">Message is required.</span>
+              }
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" [disabled]="isSubmitting()" class="btn-primary w-full">
+                @if (isSubmitting()) {
+                  <svg class="animate-spin" style="width:1.25rem;height:1.25rem;margin-right:0.5rem" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                  </svg>
+                  Processing...
+                } @else {
+                  Send Request 
+                  <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-left: 0.5rem">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
+                }
+              </button>
+            </div>
+
+            @if (submitSuccess()) {
+              <div class="status-msg success animate-scale-in">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Thank you! Your request has been sent successfully. We'll contact you soon.</span>
+              </div>
+            }
+
+            @if (submitError()) {
+              <div class="status-msg error animate-scale-in">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <span>Something went wrong. Please check your connection or try again later.</span>
+              </div>
+            }
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

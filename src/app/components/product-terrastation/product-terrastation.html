@@ -1,0 +1,202 @@
+<div class="product-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="breadcrumb">
+        <a routerLink="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-sep">Products</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">SoilSens<sup>®</sup> TerraStation<sup>™</sup></span>
+      </div>
+
+      <div class="hero-badge">
+        <span class="badge-tag">☀️ Solar Powered</span>
+        <span class="badge-tag">📡 IoT</span>
+        <span class="badge-tag">🔬 IIT Bombay FDR Probe</span>
+      </div>
+
+      <h1 class="hero-title">SOILSENS<sup>®</sup> TERRASTATION<sup>™</sup></h1>
+
+      <p class="hero-description">
+        SoilSens<sup>®</sup> TerraStation<sup>™</sup> is a solar powered IoT device that can be customized as per the
+        client needs. It uses an FDR soil moisture probe designed and developed at IIT Bombay — which has
+        gone through extensive testing in the lab and also on the field. It measures soil moisture, soil
+        temperature, ambient humidity, and ambient temperature. It is modular, its height is adjustable,
+        and data can be recorded as per the customer requirement.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">Core Sensors</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Solar Powered</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">IIT</span>
+          <span class="stat-label">Bombay Probe</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Device Showcase Section -->
+  <section class="device-section">
+    <div class="container">
+      <div class="device-grid">
+        <!-- Visual -->
+        <div class="device-visual animate-slide-up">
+          <div class="solution-device-img">
+            <img src="img/station.jpg" alt="SoilSens TerraStation Device" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Device Info -->
+        <div class="device-info">
+          <h2 class="section-title" style="text-align:left; margin-bottom:1.5rem">How It Works</h2>
+          <p class="device-desc">
+            TerraStation<sup>™</sup> is installed in the field and continuously monitors soil and environmental
+            conditions. Data is transmitted wirelessly via IoT to the cloud, where advanced analytics generate
+            actionable advisories sent directly to the farmer's mobile device.
+          </p>
+
+          <div class="flowsteps">
+            <div class="flowstep">
+              <div class="step-num">01</div>
+              <div class="step-info">
+                <strong>Sense</strong>
+                <p>FDR probe and environmental sensors collect real-time data 24/7</p>
+              </div>
+            </div>
+            <div class="flowstep">
+              <div class="step-num">02</div>
+              <div class="step-info">
+                <strong>Transmit</strong>
+                <p>Solar-powered IoT module sends data securely to the cloud</p>
+              </div>
+            </div>
+            <div class="flowstep">
+              <div class="step-num">03</div>
+              <div class="step-info">
+                <strong>Analyze</strong>
+                <p>AI-driven analytics process data and generate precise advisories</p>
+              </div>
+            </div>
+            <div class="flowstep">
+              <div class="step-num">04</div>
+              <div class="step-info">
+                <strong>Advise</strong>
+                <p>Farmer receives personalized irrigation and crop management alerts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Sensors Section -->
+  <section class="sensors-section">
+    <div class="container">
+      <h2 class="section-title">4 Core Sensors</h2>
+      <p class="section-subtitle">
+        TerraStation<sup>™</sup> comes equipped with four integrated sensors. Additional sensors can be attached
+        based on the client's specific requirements, making it truly extensible.
+      </p>
+      <div class="sensors-grid">
+        @for (sensor of sensors; track sensor.name) {
+          <div class="sensor-card">
+            <div class="sensor-icon">{{ sensor.icon }}</div>
+            <h3 class="sensor-name">{{ sensor.name }}</h3>
+            <p class="sensor-desc">{{ sensor.description }}</p>
+          </div>
+        }
+      </div>
+      <div class="expandable-note">
+        <svg fill="currentColor" viewBox="0 0 20 20" style="width:1.25rem;height:1.25rem;flex-shrink:0">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+        </svg>
+        <span>Additional sensors can be attached based on the client's requirement — completely modular and customizable.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">Key Features</h2>
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <div class="feature-card">
+            <div class="feature-icon">{{ feature.icon }}</div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-description">{{ feature.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Farmer Advisory Section -->
+  <section class="advisory-section">
+    <div class="container">
+      <div class="advisory-grid">
+        <div class="advisory-left">
+          <h2 class="section-title" style="text-align:left">Farmer Gets Advisory on Mobile</h2>
+          <p class="advisory-intro">
+            TerraStation<sup>™</sup> puts the power of precision agriculture directly in the farmer's hands.
+            Through real-time sensor data and AI-driven analysis, farmers receive instant mobile advisories
+            that help them make smarter decisions every day.
+          </p>
+          <p class="advisory-intro">
+            With this system, farmers can <strong>improve yield</strong>, <strong>save water</strong>,
+            and <strong>reduce crop loss</strong> due to disease and pests.
+          </p>
+        </div>
+        <div class="advisory-right">
+          <div class="advisory-cards">
+            @for (advisory of farmerAdvisories; track advisory.question) {
+              <div class="advisory-card">
+                <div class="advisory-icon">{{ advisory.icon }}</div>
+                <div class="advisory-content">
+                  <h3 class="advisory-question">{{ advisory.question }}</h3>
+                  <p class="advisory-detail">{{ advisory.description }}</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-title">Benefits for Farmers</h2>
+      <div class="benefits-grid">
+        @for (benefit of farmerBenefits; track benefit.title) {
+          <div class="benefit-card">
+            <div class="benefit-icon">{{ benefit.icon }}</div>
+            <h3 class="benefit-title">{{ benefit.title }}</h3>
+            <p class="benefit-description">{{ benefit.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Deploy TerraStation<sup>™</sup> on Your Farm?</h2>
+      <p class="cta-description">
+        Contact us for a customized TerraStation<sup>™</sup> solution tailored to your specific crop and field requirements.
+      </p>
+      <a routerLink="/request-demo" class="cta-button">Request a Demo</a>
+    </div>
+  </section>
+</div>

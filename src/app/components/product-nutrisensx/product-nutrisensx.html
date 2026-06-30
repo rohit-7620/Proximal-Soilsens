@@ -1,0 +1,234 @@
+<div class="product-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="breadcrumb">
+        <a routerLink="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">SoilSens<sup>®</sup> NutriSensX<sup>™</sup></span>
+      </div>
+      
+      <h1 class="hero-title">SOILSENS<sup>®</sup> NUTRISENSX<sup>™</sup></h1>
+      
+      <p class="hero-description">
+        Soil stands as a cornerstone of farming, wielding immense influence over 
+        agricultural productivity. A healthy soil ecosystem can amplify yields by 30 to 
+        40%, fostering a delicate equilibrium between productivity and environmental 
+        sustainability. However, soil testing remains shrouded in mystery for many 
+        farmers in developing nations, leading to the haphazard application of 
+        fertilizers. This misuse exacts a toll on soil quality and incurs substantial costs 
+        for farming endeavors.
+      </p>
+    </div>
+  </section>
+
+  <!-- Challenges Section -->
+  <section class="challenges-section">
+    <div class="container">
+      <h2 class="section-title">Challenges with current soil testing:</h2>
+      
+      <div class="challenges-grid">
+        @for (challenge of challenges; track challenge) {
+          <div class="challenge-item">
+            <svg class="challenge-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+            </svg>
+            <p>{{ challenge }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="solution-section">
+    <div class="container">
+      <h2 class="section-title">Solution:</h2>
+      
+      <div class="solution-grid">
+        <!-- Product Image -->
+        <div class="solution-image animate-slide-up">
+          <div class="solution-device-img">
+            <img src="img/n6.jpg" alt="NutriSensX Device" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Solution Content -->
+        <div class="solution-content">
+          <div class="solution-block">
+            <h3 class="solution-subtitle">Current Capabilities</h3>
+            <p class="solution-text">{{ solution.current.description }}</p>
+            
+            <div class="parameters-list">
+              <h4>Measures 6 parameters:</h4>
+              <ul class="param-grid">
+                @for (param of solution.current.parameters; track param) {
+                  <li class="param-item">
+                    <svg class="param-icon" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    {{ param }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+
+          <div class="solution-block">
+            <h3 class="solution-subtitle">Future Expansion</h3>
+            <p class="solution-text">{{ solution.future.description }}</p>
+            
+            <div class="parameters-list">
+              <h4>Additional parameters coming:</h4>
+              <ul class="param-grid">
+                @for (param of solution.future.additionalParams; track param) {
+                  <li class="param-item future">
+                    <svg class="param-icon" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"/>
+                    </svg>
+                    {{ param }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+
+          <div class="data-impact">
+            <h3 class="solution-subtitle">Data-Driven Impact</h3>
+            <p class="solution-text">{{ solution.dataImpact }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SDGs Section -->
+  <section class="sdgs-section">
+    <div class="container">
+      <h2 class="section-title">Contributing to UN Sustainable Development Goals</h2>
+      <p class="section-subtitle">
+        Through our innovative NutriSensX™ solutions, we not only address pressing 
+        agricultural challenges but also contribute to the achievement of key SDGs. 
+        Below are the SDGs that our solutions directly impact:
+      </p>
+
+      <div class="sdgs-grid">
+        @for (sdg of sdgs; track sdg.number) {
+          <div class="sdg-card">
+            <div class="sdg-number">SDG {{ sdg.number }}</div>
+            <h3 class="sdg-title">{{ sdg.title }}</h3>
+            <p class="sdg-description">{{ sdg.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Revolution Section -->
+  <section class="revolution-section">
+    <div class="container">
+      <h2 class="section-title">
+        Why is NutriSensX™ - A portable soil testing device from SoilSens a true revolution in agriculture?
+      </h2>
+      
+      <p class="revolution-intro">
+        The true revolution in soil testing lies in the development and adoption of innovative 
+        technologies that make soil analysis more accessible, affordable, and accurate than 
+        ever before.
+      </p>
+
+      <div class="specs-highlight">
+        <div class="spec-item">
+          <span class="spec-label">Weight:</span>
+          <span class="spec-value">{{ specs.weight }}</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Power:</span>
+          <span class="spec-value">{{ specs.power }}</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Usability:</span>
+          <span class="spec-value">{{ specs.usability }}</span>
+        </div>
+      </div>
+
+      <div class="revolution-grid">
+        @for (point of revolutionPoints; track point.title) {
+          <div class="revolution-card">
+            <h3 class="revolution-title">{{ point.title }}</h3>
+            <p class="revolution-description">{{ point.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-title">Benefits of NutriSensX™</h2>
+      
+      <p class="benefits-intro">
+        NutriSensX™ offers farmers a transformative solution by revolutionizing soil 
+        testing practices. With its portable, user-friendly device, NutriSensX™ empowers 
+        farmers with real-time soil analysis, providing valuable insights into soil health 
+        and nutrient levels within minutes.
+      </p>
+
+      <p class="benefits-detail">
+        By enabling precise fertilizer application and tailored agronomic 
+        recommendations, NutriSensX™ enhances crop yields, reduces input costs, and 
+        fosters sustainable agricultural practices. Its accessibility, affordability, and 
+        accuracy make NutriSensX™ an indispensable tool for farmers, facilitating 
+        informed decision-making and driving agricultural productivity, profitability, and 
+        resilience.
+      </p>
+
+      <div class="benefits-grid">
+        @for (benefit of benefits; track benefit.title) {
+          <div class="benefit-card">
+            <div class="benefit-icon">{{ benefit.icon }}</div>
+            <h3 class="benefit-title">{{ benefit.title }}</h3>
+            <p class="benefit-description">{{ benefit.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="section-title">Product Gallery</h2>
+      
+      <div class="gallery-grid">
+        <div class="gallery-image-wrapper animate-slide-up">
+          <div class="gallery-image-container">
+            <img src="img/n1.jpg" alt="NutriSensX Preview 1" class="gallery-image" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-image-wrapper animate-slide-up" style="animation-delay: 0.2s">
+          <div class="gallery-image-container">
+            <img src="img/n6.jpg" alt="NutriSensX Preview 2" class="gallery-image" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-image-wrapper animate-slide-up" style="animation-delay: 0.4s">
+          <div class="gallery-image-container">
+            <img src="img/n7.jpg" alt="NutriSensX Preview 3" class="gallery-image" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Transform Your Soil Testing?</h2>
+      <p class="cta-description">
+        Experience the revolution in precision agriculture with NutriSensX™
+      </p>
+      <a routerLink="/request-demo" class="cta-button">Request a Demo</a>
+    </div>
+  </section>
+</div>

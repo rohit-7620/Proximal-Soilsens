@@ -1,0 +1,242 @@
+<div class="product-page">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-container">
+      <div class="hero-inner">
+
+        <!-- Left: Text Content -->
+        <div class="hero-text animate-slide-up">
+          <div class="breadcrumb">
+            <a routerLink="/" class="breadcrumb-link">Home</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-sep">Products</span>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">SoilSens<sup>®</sup> FARMER<sup>©</sup> App</span>
+          </div>
+
+          <div class="hero-badge">
+            <span class="badge-tag">📱 Mobile App</span>
+            <span class="badge-tag">🌾 For Farmers</span>
+            <span class="badge-tag">☁️ Cloud Connected</span>
+            <span class="badge-tag">🤝 Expert Advisory</span>
+          </div>
+
+          <h1 class="hero-title">
+            FARMER<sup>©</sup> APP
+          </h1>
+          <p class="hero-tagline">Farmer Accessible Resource Management And Easy Recommendations</p>
+
+          <p class="hero-description">
+            FARMER<sup>©</sup> app is made for farmers to easily access weather forecast data, soil nutrient
+            and moisture data, satellite data, crop data, and farm data — and get advisories instantly under
+            <strong>one platform</strong>. It also allows farmers to monitor crop progress and
+            log activities easily for future analysis.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-pill">
+              <span class="stat-num">6+</span>
+              <span class="stat-label">Data Types</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">1</span>
+              <span class="stat-label">Platform</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a routerLink="/request-demo" class="btn-primary">Request a Demo</a>
+            <a routerLink="/contact" class="btn-secondary">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Right: Product Image -->
+        <div class="hero-image animate-slide-up" style="animation-delay:0.2s">
+          <div class="product-image-frame">
+            <img src="Products/farmer app.jpg" alt="SoilSens FARMER App" loading="eager">
+            <!-- Floating live-data badges -->
+            <div class="img-badge img-badge-1">🌤️ Weather & Forecast</div>
+            <div class="img-badge img-badge-2">🧪 Soil Health</div>
+            <div class="img-badge img-badge-3">📈 Crop Progress</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FARMER Acronym Section -->
+  <section class="acronym-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          The Name Says It All
+        </div>
+        <h2 class="section-title">
+          What FARMER<sup>©</sup><br>
+          <span class="gradient-text">Stands For</span>
+        </h2>
+        <p class="section-sub">
+          Every letter represents a core principle that drives the app's mission to transform how farmers work.
+        </p>
+      </div>
+
+      <div class="acronym-grid">
+        @for (item of acronym; track item.letter) {
+          <div class="acronym-card">
+            <div class="acronym-letter">{{ item.letter }}</div>
+            <div class="acronym-info">
+              <h3 class="acronym-word">{{ item.word }}</h3>
+              <p class="acronym-desc">{{ item.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Data at Your Fingertips Section -->
+  <section class="data-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Everything in One Place
+        </div>
+        <h2 class="section-title">
+          All Farm Data,<br>
+          <span class="gradient-text">At Your Fingertips</span>
+        </h2>
+        <p class="section-sub">
+          One app. Every data type a farmer needs — instantly accessible on their mobile.
+        </p>
+      </div>
+
+      <div class="data-grid">
+        @for (item of dataTypes; track item.label) {
+          <div class="data-chip">
+            <div class="data-chip-icon">{{ item.icon }}</div>
+            <span class="data-label">{{ item.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Connected Devices Section -->
+  <section class="devices-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Hardware Integration
+        </div>
+        <h2 class="section-title">
+          Connected Hardware<br>
+          <span class="gradient-text">Devices</span>
+        </h2>
+        <p class="section-sub">
+          FARMER<sup>©</sup> app is interfaced with SoilSens<sup>®</sup> hardware for real-time field intelligence.
+        </p>
+      </div>
+
+      <div class="devices-grid">
+        @for (device of connectedDevices; track device.name) {
+          <div class="device-card">
+            <div class="device-icon-wrap">{{ device.icon }}</div>
+            <h3 class="device-name">{{ device.name }}</h3>
+            <p class="device-desc">{{ device.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Why FARMER App
+        </div>
+        <h2 class="section-title">
+          Built for Every Farm,<br>
+          <span class="gradient-text">Every Farmer</span>
+        </h2>
+        <p class="section-sub">
+          Six powerful capabilities that make FARMER<sup>©</sup> the most trusted farm management app.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        @for (benefit of benefits; track benefit.title) {
+          <div class="benefit-card">
+            <div class="benefit-icon-wrap">{{ benefit.icon }}</div>
+            <h3 class="benefit-title">{{ benefit.title }}</h3>
+            <p class="benefit-desc">{{ benefit.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Rural Empowerment Banner - FEATURED SECTION -->
+  <section class="empowerment-section empowerment-featured">
+    <div class="container">
+      <!-- Eye-catching header -->
+      <div class="empowerment-header">
+        <div class="section-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+          Social Impact & Sustainability
+        </div>
+        <h2 class="empowerment-main-title">
+          Empowering Rural Youth<br>
+          <span class="gradient-text-white">&amp; Women Farmers</span>
+        </h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="emp-inner">
+        <div class="emp-left">
+          <p class="emp-text">
+            Rural youth and Self-Help Groups (SHGs) can use NutriSensX<sup>™</sup> and the FARMER<sup>©</sup>
+            app to provide quick soil testing services to farmers at their doorstep. This helps generate
+            sustainable employment and contributes to several <strong>UNDP Sustainability Goals</strong>.
+          </p>
+          <div class="emp-highlight">
+            <div class="highlight-icon">👩‍🌾</div>
+            <p>Sustainable livelihoods powered by precision agriculture technology.</p>
+          </div>
+        </div>
+
+        <div class="emp-right">
+          <div class="sdg-chips">
+            <div class="sdg-chip">🎯 No Poverty</div>
+            <div class="sdg-chip">🍽️ Zero Hunger</div>
+            <div class="sdg-chip">💼 Decent Work &amp; Growth</div>
+            <div class="sdg-chip">🌱 Responsible Consumption</div>
+            <div class="sdg-chip">🌍 Climate Action</div>
+            <div class="sdg-chip">🤝 Partnerships for Goals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Start Farming Smarter Today</h2>
+      <p class="cta-desc">
+        Download FARMER<sup>©</sup> app and connect with SoilSens® devices for complete farm intelligence.
+      </p>
+      <a routerLink="/request-demo" class="cta-button">Request a Demo</a>
+    </div>
+  </section>
+
+</div>

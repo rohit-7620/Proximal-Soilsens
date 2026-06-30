@@ -1,0 +1,49 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { RequestDemoComponent } from './components/request-demo/request-demo.component';
+import { SolutionsFarmers } from './components/solutions-farmers/solutions-farmers';
+import { SolutionsCooperatives } from './components/solutions-cooperatives/solutions-cooperatives';
+import { ProductNutrisensx } from './components/product-nutrisensx/product-nutrisensx';
+import { ProductTerrastation } from './components/product-terrastation/product-terrastation';
+import { ProductTerraport } from './components/product-terraport/product-terraport';
+import { ProductSmSensor } from './components/product-sm-sensor/product-sm-sensor';
+import { ProductWeatherStation } from './components/product-weather-station/product-weather-station';
+import { ProductFarmerApp } from './components/product-farmer-app/product-farmer-app';
+import { ProductAgriWiseApp } from './components/product-agriwise-app/product-agriwise-app';
+import { ProductFutureProducts } from './components/product-future-products/product-future-products';
+import { SuccessComponent } from './components/success/success.component';
+import { PartnersComponent } from './components/partners/partners.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { OurTeamComponent } from './components/our-team/our-team.component';
+import { ResearchDevelopmentComponent } from './components/research-development/research-development.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { MediaComponent } from './components/media/media.component';
+import { BrochureComponent } from './components/brochure/brochure.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FaqComponent } from './components/faq/faq.component';
+
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'request-demo', component: RequestDemoComponent },
+  { path: 'partners', component: PartnersComponent },
+  { path: 'faq', component: FaqComponent },
+  { path: 'company/about-us', component: AboutUsComponent },
+  { path: 'company/our-team', component: OurTeamComponent },
+  { path: 'company/research-development', component: ResearchDevelopmentComponent },
+  { path: 'company/gallery', component: GalleryComponent },
+  { path: 'company/media', component: MediaComponent },
+  { path: 'company/brochure', component: BrochureComponent },
+  { path: 'company/contact', component: ContactComponent },
+  { path: 'solutions/farmers', component: SolutionsFarmers },
+  { path: 'solutions/cooperatives', component: SolutionsCooperatives },
+  { path: 'products/nutrisensx', component: ProductNutrisensx },
+  { path: 'products/terrastation', component: ProductTerrastation },
+  { path: 'products/terraport', component: ProductTerraport },
+  { path: 'products/sm-sensor', component: ProductSmSensor },
+  { path: 'products/weather-station', component: ProductWeatherStation },
+  { path: 'products/farmer-app', component: ProductFarmerApp },
+  { path: 'products/agriwise-app', component: ProductAgriWiseApp },
+  { path: 'products/future-products', component: ProductFutureProducts },
+  { path: 'success', component: SuccessComponent },
+  { path: '**', redirectTo: '' }
+];

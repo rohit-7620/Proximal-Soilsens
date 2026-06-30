@@ -1,0 +1,106 @@
+<section id="partners" class="section-padding testimonials-bg">
+  <div class="container-custom">
+
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+        Testimonials
+      </div>
+      <h2 class="section-title">
+        Trusted by Farmers,<br>
+        <span class="gradient-text">Loved by Agribusinesses</span>
+      </h2>
+      <p class="section-sub">
+        Real stories from the field — farmers, FPOs, and agribusinesses share their SoilSens experience.
+      </p>
+    </div>
+
+    <!-- Slider -->
+    <div class="t-slider" aria-live="polite">
+      <div class="t-track" [style.transform]="'translateX(-' + activeIndex * 100 + '%)'">
+        @for (t of testimonials(); track t.id) {
+          <div class="t-slide">
+            <div class="t-card">
+              <div class="t-stars" [attr.aria-label]="t.rating + ' star rating'">
+                @for (s of stars(t.rating); track $index) {
+                  <svg class="t-star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                }
+              </div>
+              <blockquote class="t-quote">"{{ t.content }}"</blockquote>
+              <div class="t-author">
+                <div>
+                  <div class="t-name">{{ t.name }}</div>
+                  <div class="t-role">{{ t.position }}</div>
+                  <div class="t-company">{{ t.company }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="t-controls">
+      <button class="t-btn" (click)="prev()" aria-label="Previous">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="t-dots">
+        @for (t of testimonials(); track $index) {
+          <button class="t-dot" [class.active]="activeIndex === $index"
+            (click)="goTo($index)" [attr.aria-label]="'Testimonial ' + ($index+1)"
+            [attr.aria-current]="activeIndex === $index ? 'true' : null">
+          </button>
+        }
+      </div>
+      <button class="t-btn" (click)="next()" aria-label="Next">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Our Clients - Infinite Marquee -->
+    <div class="logos-section">
+      <p class="logos-title">Trusted by Leading Organizations</p>
+      <div class="marquee-container">
+        <div class="marquee-track">
+          @for (c of clients; track 'first-' + $index) {
+            <div class="marquee-item">
+              <img [src]="c.image" [alt]="c.name" class="client-logo" loading="lazy">
+            </div>
+          }
+          @for (c of clients; track 'second-' + $index) {
+            <div class="marquee-item" aria-hidden="true">
+              <img [src]="c.image" [alt]="c.name" class="client-logo" loading="lazy">
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Incubation & Funding Support -->
+    <div class="logos-section incubation-section">
+      <p class="logos-title">Incubation &amp; Funding Support</p>
+      <div class="marquee-container">
+        <div class="marquee-track">
+          @for (i of incubators; track 'first-' + $index) {
+            <div class="marquee-item">
+              <img [src]="i.image" [alt]="i.name" class="incubator-logo" loading="lazy">
+            </div>
+          }
+          @for (i of incubators; track 'second-' + $index) {
+            <div class="marquee-item" aria-hidden="true">
+              <img [src]="i.image" [alt]="i.name" class="incubator-logo" loading="lazy">
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

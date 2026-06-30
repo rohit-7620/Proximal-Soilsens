@@ -1,0 +1,163 @@
+<div class="rd-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="page-title">Research & Development</h1>
+      <p class="subtitle">Innovation at the core of precision agriculture</p>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-card">
+        <h2 class="section-title">Research & Academic Collaborations</h2>
+        
+        <div class="story-content">
+          <p class="story-text">
+            Our story began at <strong>IIT Bombay</strong>, where our passion for soil sensing took shape. 
+            We hold an <strong>exclusive license for the initial soil moisture sensor technology</strong>, 
+            and every enhancement since then has been developed independently by our team.
+          </p>
+
+          <p class="story-text">
+            From early prototypes built at <strong>CEN, IITBNF, and INUP</strong> to field trials through 
+            the <strong>NNETRA program</strong>, collaboration has always been part of our journey.
+          </p>
+
+          <p class="story-text highlight-text">
+            We're excited to grow this spirit further and welcome research partners, co-funded innovation 
+            projects, and on-ground implementation teams who share our mission of bringing cutting-edge 
+            agricultural sensing to every farmer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title centered">Our Innovation Journey</h2>
+      
+      <div class="timeline">
+        @for (milestone of milestones; track milestone.title) {
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-phase">{{ milestone.phase }}</span>
+              <h3 class="timeline-title">{{ milestone.title }}</h3>
+              <p class="timeline-description">{{ milestone.description }}</p>
+              <span class="timeline-year">{{ milestone.year }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration Opportunities -->
+  <section class="collaboration-section">
+    <div class="container">
+      <h2 class="section-title centered">Collaboration Opportunities</h2>
+      <p class="section-subtitle">Join us in advancing agricultural technology</p>
+      
+      <div class="collaboration-grid">
+        @for (collab of collaborations; track collab.title) {
+          <div class="collab-card">
+            <div class="collab-icon">{{ collab.icon }}</div>
+            <h3 class="collab-title">{{ collab.title }}</h3>
+            <p class="collab-description">{{ collab.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Facilities -->
+  <section class="facilities-section">
+    <div class="container">
+      <h2 class="section-title centered">Development Facilities</h2>
+      
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <h3 class="facility-name">CEN</h3>
+          <p class="facility-description">Centre for Excellence in Nanoelectronics</p>
+        </div>
+        <div class="facility-card">
+          <h3 class="facility-name">IITBNF</h3>
+          <p class="facility-description">IIT Bombay Nanofabrication Facility</p>
+        </div>
+        <div class="facility-card">
+          <h3 class="facility-name">INUP</h3>
+          <p class="facility-description">Indian Nanoelectronics Users Program</p>
+        </div>
+        <div class="facility-card">
+          <h3 class="facility-name">NNETRA</h3>
+          <p class="facility-description">Field Testing & Validation Program</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Focus -->
+  <section class="technology-section">
+    <div class="container">
+      <h2 class="section-title centered">Technology Focus Areas</h2>
+      
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-number">01</div>
+          <h3 class="tech-title">Soil Moisture Sensing</h3>
+          <p class="tech-description">
+            Exclusive licensed technology with continuous independent enhancements
+          </p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-number">02</div>
+          <h3 class="tech-title">Nutrient Analysis</h3>
+          <p class="tech-description">
+            Advanced electrochemical sensors for real-time soil health monitoring
+          </p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-number">03</div>
+          <h3 class="tech-title">IoT Integration</h3>
+          <p class="tech-description">
+            Connected devices for seamless data collection and analysis
+          </p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-number">04</div>
+          <h3 class="tech-title">AI & Analytics</h3>
+          <p class="tech-description">
+            Machine learning for predictive insights and recommendations
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <h2 class="cta-title">Partner With Us</h2>
+        <p class="cta-text">
+          Interested in research collaboration, co-funded projects, or field implementation? 
+          Let's work together to transform agriculture.
+        </p>
+        <div class="cta-buttons">
+          <a href="mailto:rajul@soilsens.com?subject=Research Collaboration Inquiry&body=Hello SoilSens Team,%0D%0A%0D%0AI am interested in collaborating on research and development.%0D%0A%0D%0AOrganization: %0D%0AContact Person: %0D%0AEmail: %0D%0APhone: %0D%0ACollaboration Type: %0D%0A%0D%0AMessage: %0D%0A" class="btn btn-primary">
+            Contact for Collaboration
+          </a>
+          <a routerLink="/partners" class="btn btn-secondary">
+            Explore Partnerships
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

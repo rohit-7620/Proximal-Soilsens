@@ -1,0 +1,244 @@
+<!-- Impact Ticker -->
+<div class="ticker-bar" aria-label="Impact statistics ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">🌍 <strong>Planet:</strong> Reduced chemical inputs by 40%</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">Saved 27% water</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">Impacted 15,000+ hectares</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">72 crops across 8 countries</span>
+    <span class="ticker-sep">|</span>
+    <span class="ticker-item">👥 <strong>People:</strong> Reached 25,000 farmers</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">Empowered 2,000 women farmers</span>
+    <span class="ticker-sep">|</span>
+    <span class="ticker-item">💰 <strong>Profit:</strong> 22% increase in productivity</span>
+    <span class="ticker-sep" aria-hidden="true">·</span>
+    <span class="ticker-item" aria-hidden="true">🌍 <strong>Planet:</strong> Reduced chemical inputs by 40%</span>
+    <span class="ticker-sep" aria-hidden="true">·</span>
+    <span class="ticker-item" aria-hidden="true">Saved 27% water</span>
+    <span class="ticker-sep" aria-hidden="true">·</span>
+    <span class="ticker-item" aria-hidden="true">Impacted 15,000+ hectares</span>
+    <span class="ticker-sep" aria-hidden="true">·</span>
+    <span class="ticker-item" aria-hidden="true">72 crops across 8 countries</span>
+    <span class="ticker-sep" aria-hidden="true">|</span>
+    <span class="ticker-item" aria-hidden="true">👥 <strong>People:</strong> Reached 25,000 farmers</span>
+    <span class="ticker-sep" aria-hidden="true">·</span>
+    <span class="ticker-item" aria-hidden="true">Empowered 2,000 women farmers</span>
+    <span class="ticker-sep" aria-hidden="true">|</span>
+    <span class="ticker-item" aria-hidden="true">💰 <strong>Profit:</strong> 22% increase in productivity</span>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav [class.scrolled]="isScrolled()" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <div class="nav-content">
+
+      <a routerLink="/" class="logo" (click)="closeMobileMenu()">
+        <img src="/logo.png" alt="SoilSens Logo" class="logo-img">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="nav-links">
+        <a routerLink="/" class="nav-link" (click)="closeMobileMenu()">Home</a>
+        <!-- Solutions Dropdown -->
+        <div class="nav-dropdown">
+          <button 
+            class="nav-link dropdown-trigger" 
+            [class.active]="isSolutionsDropdownOpen()"
+            (click)="toggleSolutionsDropdown()">
+            Solutions
+            <svg class="dropdown-icon" [class.rotate]="isSolutionsDropdownOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1rem;height:1rem;margin-left:0.25rem">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          @if (isSolutionsDropdownOpen()) {
+            <div class="dropdown-menu">
+              @for (link of solutionLinks; track link.route) {
+                <a (click)="navigateSolution(link.route)" class="dropdown-item" style="cursor: pointer;">
+                  {{ link.label }}
+                </a>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Products Dropdown -->
+        <div class="nav-dropdown">
+          <button 
+            class="nav-link dropdown-trigger" 
+            [class.active]="isProductsDropdownOpen()"
+            (click)="toggleProductsDropdown()">
+            Products
+            <svg class="dropdown-icon" [class.rotate]="isProductsDropdownOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1rem;height:1rem;margin-left:0.25rem">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          @if (isProductsDropdownOpen()) {
+            <div class="dropdown-menu">
+              @for (link of productLinks; track link.route) {
+                <a [routerLink]="link.route" class="dropdown-item" (click)="closeProductsDropdown()">
+                  {{ link.label }}
+                </a>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Company Dropdown -->
+        <div class="nav-dropdown">
+          <button 
+            class="nav-link dropdown-trigger" 
+            [class.active]="isCompanyDropdownOpen()"
+            (click)="toggleCompanyDropdown()">
+            Company
+            <svg class="dropdown-icon" [class.rotate]="isCompanyDropdownOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1rem;height:1rem;margin-left:0.25rem">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          @if (isCompanyDropdownOpen()) {
+            <div class="dropdown-menu">
+              @for (link of companyLinks; track link.route) {
+                <a [routerLink]="link.route" class="dropdown-item" (click)="closeCompanyDropdown()">
+                  {{ link.label }}
+                </a>
+              }
+            </div>
+          }
+        </div>
+
+        <a [routerLink]="successRoute" class="nav-link" (click)="closeMobileMenu()">Success</a>
+        <a routerLink="/partners" class="nav-link" (click)="closeMobileMenu()">Partners</a>
+        <a routerLink="/faq" class="nav-link" (click)="closeMobileMenu()">FAQ</a>
+        @for (link of navLinks; track link.href) {
+          <a [href]="link.href" (click)="scrollToSection($event, link.href)" class="nav-link">
+            {{ link.label }}
+          </a>
+        }
+      </div>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button (click)="themeService.toggleTheme()" class="theme-toggle" aria-label="Toggle dark mode">
+          @if (themeService.isDarkMode()) {
+            <svg style="width:1.25rem;height:1.25rem;color:#fbbf24" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+            </svg>
+          } @else {
+            <svg style="width:1.25rem;height:1.25rem;color:#374151" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          }
+        </button>
+
+        <!-- Request Demo (desktop) -->
+        <a routerLink="/request-demo" class="btn-demo" (click)="navigateToDemo()">Request Demo</a>
+
+        <!-- Hamburger -->
+        <button (click)="toggleMobileMenu()" class="mobile-menu-btn" aria-label="Toggle menu" [attr.aria-expanded]="isMobileMenuOpen()">
+          @if (!isMobileMenuOpen()) {
+            <svg style="width:1.5rem;height:1.5rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          } @else {
+            <svg style="width:1.5rem;height:1.5rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          }
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    @if (isMobileMenuOpen()) {
+      <div class="mobile-menu">
+        <div class="mobile-menu-content">
+          <!-- Solutions in Mobile -->
+          <div class="mobile-dropdown">
+            <button (click)="toggleSolutionsDropdown()" class="mobile-nav-link mobile-dropdown-trigger">
+              Solutions
+              <svg class="dropdown-icon" [class.rotate]="isSolutionsDropdownOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1rem;height:1rem">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            @if (isSolutionsDropdownOpen()) {
+              <div class="mobile-dropdown-items">
+                @for (link of solutionLinks; track link.route) {
+                  <a (click)="navigateSolution(link.route)" class="mobile-dropdown-item" style="cursor: pointer;">
+                    {{ link.label }}
+                  </a>
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Products in Mobile -->
+          <div class="mobile-dropdown">
+            <button (click)="toggleProductsDropdown()" class="mobile-nav-link mobile-dropdown-trigger">
+              Products
+              <svg class="dropdown-icon" [class.rotate]="isProductsDropdownOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1rem;height:1rem">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            @if (isProductsDropdownOpen()) {
+              <div class="mobile-dropdown-items">
+                @for (link of productLinks; track link.route) {
+                  <a [routerLink]="link.route" class="mobile-dropdown-item" (click)="closeMobileMenu()">
+                    {{ link.label }}
+                  </a>
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Company in Mobile -->
+          <div class="mobile-dropdown">
+            <button (click)="toggleCompanyDropdown()" class="mobile-nav-link mobile-dropdown-trigger">
+              Company
+              <svg class="dropdown-icon" [class.rotate]="isCompanyDropdownOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1rem;height:1rem">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            @if (isCompanyDropdownOpen()) {
+              <div class="mobile-dropdown-items">
+                @for (link of companyLinks; track link.route) {
+                  <a [routerLink]="link.route" class="mobile-dropdown-item" (click)="closeMobileMenu()">
+                    {{ link.label }}
+                  </a>
+                }
+              </div>
+            }
+          </div>
+
+          <a routerLink="/" class="mobile-nav-link" (click)="closeMobileMenu()">Home</a>
+          <a [routerLink]="successRoute" class="mobile-nav-link" (click)="closeMobileMenu()">Success</a>
+          <a routerLink="/partners" class="mobile-nav-link" (click)="closeMobileMenu()">Partners</a>
+          <a routerLink="/faq" class="mobile-nav-link" (click)="closeMobileMenu()">FAQ</a>
+          @for (link of navLinks; track link.href) {
+            <a [href]="link.href" (click)="scrollToSection($event, link.href)" class="mobile-nav-link">
+              {{ link.label }}
+            </a>
+          }
+          <div class="mobile-cta-row">
+            <a routerLink="/request-demo" (click)="navigateToDemo()" class="btn-demo" style="width:100%;text-align:center">Request Demo</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</nav>
+
+<!-- Scroll to top button -->
+<button 
+  class="scroll-top-btn" 
+  [class.visible]="isScrolled()" 
+  (click)="scrollToTop()" 
+  aria-label="Scroll to top">
+  <svg style="width:1.5rem;height:1.5rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+  </svg>
+</button>
+

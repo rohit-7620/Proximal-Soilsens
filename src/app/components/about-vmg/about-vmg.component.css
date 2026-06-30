@@ -1,0 +1,92 @@
+.vmg-bg { 
+  background: #020617; 
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── VMG grid ── */
+.vmg-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) { 
+  .vmg-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+  } 
+}
+
+.vmg-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.vmg-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #22c55e, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vmg-card:hover {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.vmg-card:hover::before { 
+  opacity: 1; 
+}
+
+.vmg-card--featured {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(22, 163, 74, 0.05));
+  border-color: rgba(34, 197, 94, 0.3);
+  transform: scale(1.05);
+}
+
+.vmg-card--featured:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.vmg-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.3));
+}
+
+.vmg-title {
+  font-family: 'Syne', 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.vmg-text {
+  font-size: 1rem;
+  color: rgba(248, 250, 252, 0.7);
+  line-height: 1.7;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

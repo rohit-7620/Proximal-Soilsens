@@ -1,0 +1,111 @@
+<div class="product-page">
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="breadcrumb">
+        <a routerLink="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-sep">Products</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">SoilSens<sup>®</sup> AgriWise<sup>™</sup> App</span>
+      </div>
+
+      <div class="hero-badge">
+        <span class="badge-tag">🔬 For Experts</span>
+        <span class="badge-tag">📊 Analytics</span>
+        <span class="badge-tag">🌱 Sustainability</span>
+        <span class="badge-tag">🤝 Collaboration</span>
+      </div>
+
+      <h1 class="hero-title">AGRIWISE<sup>™</sup> APP</h1>
+      <p class="hero-tagline">The Expert Platform for Agricultural Professionals</p>
+      <p class="hero-description">
+        AgriWise<sup>™</sup> is designed for agricultural professionals — agronomists, consultants, and
+        researchers — providing cutting-edge tools, insightful analytics, and a collaboration platform
+        that drives sustainable, precision agriculture at scale.
+      </p>
+    </div>
+  </section>
+
+  <!-- Acronym -->
+  <section class="acronym-section">
+    <div class="container">
+      <h2 class="section-title">What AgriWise<sup>™</sup> Stands For</h2>
+      <p class="section-subtitle">Every letter embodies the platform's purpose and values.</p>
+      <div class="acronym-list">
+        @for (item of acronym; track item.letter) {
+          <div class="acronym-row">
+            <div class="letter-badge" [style.background]="item.color">{{ item.letter }}</div>
+            <div class="acronym-content">
+              <h3 class="acronym-word">{{ item.word }}</h3>
+              <p class="acronym-desc">{{ item.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- App Showcase Image -->
+  <section class="app-showcase-section">
+    <div class="container">
+      <div class="showcase-header">
+        <div class="section-eyebrow">
+          <span class="eyebrow-icon">📱</span>
+          <span>App Interface</span>
+        </div>
+        <h2 class="section-title">Experience AgriWise<sup>™</sup></h2>
+        <p class="section-subtitle">
+          Discover the intuitive interface designed for agricultural professionals to make data-driven decisions with precision and confidence.
+        </p>
+      </div>
+      
+      <div class="app-showcase-outer-border">
+        <div class="app-showcase-container">
+          <img 
+            src="/img/agriwiseapp108.jpg" 
+            alt="AgriWise App Interface - Professional agricultural analytics platform"
+            class="app-showcase-image"
+            loading="lazy"
+          />
+          <div class="showcase-overlay">
+            <div class="showcase-badge">
+              <span class="badge-dot pulse-animation"></span>
+              <span>Live Interface</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">Platform Capabilities</h2>
+      <p class="section-subtitle">
+        AgriWise<sup>™</sup> encapsulates the essence, purpose, and value proposition within the agricultural domain.
+      </p>
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <div class="feature-card">
+            <div class="feature-icon">{{ feature.icon }}</div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-desc">{{ feature.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Elevate Your Agricultural Practice</h2>
+      <p class="cta-desc">Join AgriWise<sup>™</sup> — the expert platform that combines cutting-edge technology with collective agricultural wisdom.</p>
+      <a routerLink="/request-demo" class="cta-button" (click)="scrollToTopOnNavigate($event, '/request-demo')">Request a Demo</a>
+    </div>
+  </section>
+
+</div>
