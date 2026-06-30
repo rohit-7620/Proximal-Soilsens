@@ -47,5 +47,5 @@ Thumbs.db
 # Environment files (environment.prod.ts is committed intentionally — URL is frontend-safe)
 
 # Media files
-src/vdo/
-*.mp4
+src/vdo/Soilsens*
+
