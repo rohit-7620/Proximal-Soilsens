@@ -44,8 +44,7 @@ __screenshots__/
 Thumbs.db
 .vercel
 
-# 🔒 Secret environment files — never commit these
-src/environments/environment.prod.ts
+# Environment files (environment.prod.ts is committed intentionally — URL is frontend-safe)
 
 # Media files
 src/vdo/
