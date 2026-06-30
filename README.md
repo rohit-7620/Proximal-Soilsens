@@ -1,4 +1,4 @@
-# SoilSNS Website - Modern Angular 18+ Homepage
+# SoilSens Website - Modern Angular 18+ Homepage
 
 A stunning, production-ready corporate homepage built with Angular 18+, featuring modern design patterns, smooth animations, and dark mode support.
 
